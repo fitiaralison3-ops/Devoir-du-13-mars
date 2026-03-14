@@ -1,0 +1,78 @@
+SOMME  -  13.03.2026
+
+******************************************
+
+******************************************
+
+1   FONCTIONS_UTILISEES
+2   VARIABLES
+3     n EST_DU_TYPE NOMBRE
+4     N100 EST_DU_TYPE LISTE
+5     i EST_DU_TYPE NOMBRE
+6     M EST_DU_TYPE NOMBRE
+7     S EST_DU_TYPE NOMBRE
+8     max EST_DU_TYPE NOMBRE
+9     position_max EST_DU_TYPE NOMBRE
+10    min EST_DU_TYPE NOMBRE
+11    position_min EST_DU_TYPE NOMBRE
+12    x EST_DU_TYPE NOMBRE
+13    t EST_DU_TYPE NOMBRE
+14  DEBUT_ALGORITHME
+15    AFFICHER "entrer le nombre de case du tableau"
+16    LIRE n
+17    i PREND_LA_VALEUR 0
+18    S PREND_LA_VALEUR 0
+19    max PREND_LA_VALEUR pow(10,-29)
+20    min PREND_LA_VALEUR 100000000
+21    TANT_QUE (i<n) FAIRE
+22      DEBUT_TANT_QUE
+23      LIRE N100[i]
+24      AFFICHER "dans la case numéro  "
+25      AFFICHERCALCUL i+1
+26      AFFICHER "  se trouve   "
+27      AFFICHER N100[i]
+28      S PREND_LA_VALEUR S+N100[i]
+29      SI (max<N100[i]) ALORS
+30        DEBUT_SI
+31        max PREND_LA_VALEUR N100[i]
+32        position_max PREND_LA_VALEUR i+1
+33        FIN_SI
+34      SI (min>N100[i]) ALORS
+35        DEBUT_SI
+36        min PREND_LA_VALEUR N100[i]
+37        position_min PREND_LA_VALEUR i+1
+38        FIN_SI
+39      i PREND_LA_VALEUR i+1
+40      FIN_TANT_QUE
+41    M PREND_LA_VALEUR S/n
+42    POUR i ALLANT_DE 0 A n-2
+43      DEBUT_POUR
+44      POUR x ALLANT_DE 0 A n-i-2
+45        DEBUT_POUR
+46        SI (N100[x]>N100[x+1]) ALORS
+47          DEBUT_SI
+48          t PREND_LA_VALEUR N100[x]
+49          N100[x] PREND_LA_VALEUR N100[x+1]
+50          N100[x+1] PREND_LA_VALEUR t
+51          FIN_SI
+52        FIN_POUR
+53      AFFICHER "Voici l' ordre croissant des nombres:"
+54      POUR i ALLANT_DE 0 A n-1
+55        DEBUT_POUR
+56        AFFICHER N100[i]
+57        AFFICHER " < "
+58        FIN_POUR
+59      FIN_POUR
+60    AFFICHER "La somme est  "
+61    AFFICHER S
+62    AFFICHER "La moyenne est  "
+63    AFFICHER M
+64    AFFICHER "La valeur maximale de la liste est  "
+65    AFFICHER max
+66    AFFICHER "  qui se trouve dans la case  "
+67    AFFICHER position_max
+68    AFFICHER "La valeur minimale de la liste est  "
+69    AFFICHER min
+70    AFFICHER "  qui se trouve dans la case  "
+71    AFFICHER position_min
+72  FIN_ALGORITHME
